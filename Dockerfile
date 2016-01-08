@@ -15,6 +15,4 @@ RUN apt-get update && \
 	apt-get -y remove make gcc libcairo2-dev libjpeg62-turbo-dev libpng12-dev libfreerdp-dev libpango1.0-dev libssh2-1-dev libossp-uuid-dev libssl-dev libvncserver-dev libpulse-dev libvorbis-dev wget && \
 	apt-get -y autoremove
 
-COPY files/defaults /defaults
-COPY files/start.sh /start.sh
 CMD [ "/usr/local/sbin/guacd", "-b", "0.0.0.0", "-f" ]
