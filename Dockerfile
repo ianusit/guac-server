@@ -11,7 +11,8 @@ RUN apt-get update &&\
     make install &&\
     cd .. &&\
     rm -rf guacamole-server-0.9.8 &&\
-    apt-get remove -y make gcc libcairo2-dev libjpeg62-turbo-dev libpng12-dev libfreerdp-dev libpango1.0-dev libssh2-1-dev libossp-uuid-dev libssl-dev libvncserver-dev libpulse-dev libvorbis-dev wget && \
-    apt-get autoremove -y
+    apt-get remove -y make gcc libcairo2-dev libjpeg62-turbo-dev libpng12-dev libfreerdp-dev libpango1.0-dev libssh2-1-dev libossp-uuid-dev libssl-dev libvncserver-dev libpulse-dev libvorbis-dev wget &&\
+    apt-get autoremove -y &&\
+    rm -rf /var/lib/apt/lists/*
 
 CMD [ "/usr/local/sbin/guacd", "-b", "0.0.0.0", "-f" ]
